@@ -1,7 +1,8 @@
-module Findable
+module PARAMABLE
 
-  def find_by_name(name)
-    self.all.detect {|i| i.name == name}
+  def to_param
+    name.downcase.gsub(' ', '-')
+    # binding.pry
   end
 
 end
