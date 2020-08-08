@@ -6,11 +6,14 @@ class Song
   extend Findable
   include PARAMABLE
   
-  attr_accessor :name
-  attr_reader :artist
+  attr_accessor :name, :artist, :song 
 
   @@songs = []
 
+  def initialize
+  self.class.all << self
+  end
+  
   def self.all
     @@songs
   end
